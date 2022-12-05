@@ -6,6 +6,31 @@ import datetime
 # Create your views here.
 
 
+def nuevofam(request):
+    familiar1 = Familia(nombre="matias", edad=58, fecha=datetime.datetime.now())
+    familiar2 = Familia(nombre="martin", edad=23, fecha=datetime.datetime.now())
+    familiar3 = Familia(nombre="marcos", edad=41, fecha=datetime.datetime.now())
+    familiar1.save()
+    familiar2.save()
+    familiar3.save()
+
+    fecha=datetime.datetime.now()
+
+    familiares={"nombre":familiar1.nombre, "edad":familiar1.edad, "fecha":familiar1.fecha,
+
+    "nombre2":familiar2.nombre, "edad2":familiar2.edad, "fecha2":familiar2.fecha,
+
+    "nombre3":familiar3.nombre, "edad3":familiar3.edad, "fecha3":familiar3.fecha}
+
+    template = loader.get_template("familiatemplate.html")
+    nuevosfamiliares = template.render(familiares)
+    return HttpResponse(nuevosfamiliares)
+
+
+
+
+
+
 def crearfamiliar(request):
     
     familiar = Familia(nombre="carina", edad=58, fecha=datetime.datetime.now())

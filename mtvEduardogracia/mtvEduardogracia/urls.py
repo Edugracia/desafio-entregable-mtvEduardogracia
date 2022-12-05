@@ -18,8 +18,6 @@ from django.urls import path
 from Familiares.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('crearfamiliar/', crearfamiliar),
-    path('familiareshtml/', familiareshtml),
-    path('crearfamiliar2/', crearfamiliar2),
+    path('admin/', admin.site.urls),       
+    path('nuevofam/', nuevofam),
 ]
